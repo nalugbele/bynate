@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|Merriweather");
+body {
+  font-family: "Inconsolata", monospace;
+  margin: 0;
+}
+
+.logo {
+	padding: 14px 16px;
+}
+
+button {
+  cursor: pointer;
+}
+
+#portfolio {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  grid-template-rows: auto;
+	/*1fr 1fr*/
+  grid-gap: 2px;
+}
+
+.project {
+  position: relative;
+  background: #F2DAD7;
+  overflow: hidden;
+}
+.project img {
+  position: absolute;
+  opacity: 0.9;
+}
+.project p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  padding: 1em 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 3;
+}
+.project .grid__title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  bottom: 0;
+  font-weight: 100;
+  font-size: 0.8em;
+  z-index: 3;
+  text-transform: uppercase;
+  color: #474545;
+  letter-spacing: 2px;
+}
+
+.project:hover .grid__overlay {
+  transform: translateY(0%);
+}
+
+.grid__overlay {
+  background: rgba(229, 182, 177, 0.9);
+  height: 100%;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  transform: translateY(101%);
+  transition: all 0.3s ease-in-out;
+}
+.grid__overlay button {
+  background: none;
+  outline: none;
+  font-weight: 100;
+  letter-spacing: 2px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 10px;
+}
+.grid__overlay button:hover {
+  transition: all 0.3s ease-in-out;
+  background: #ffffff;
+  color: #D1A39E;
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: fixed;
+  background: rgba(71, 69, 69, 0.7);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 3;
+}
+
+.overlay.open {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.overlay__inner {
+  background: #ffffff;
+  width: 700px;
+  padding: 20px;
+  position: relative;
+  opacity: 1;
+}
+
+.close {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  background: none;
+  outline: 0;
+  color: #474545;
+  border: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.close:hover {
+  color: #D1A39E;
+}
+
+.project__image {
+  margin-left: -50%;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #333	;
+   color: white;
+   text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.footer2 {
+	background-color: #111;
+	color: #fff;
+	font-size: 1em;
+	padding: 14px 16px;
+}
+
+.Footer {
+  /*position: absolute;*/
+  /*top: 50%;*/
+  right: 5%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.Footer::before {
+  content: '';
+  /*position: absolute;*/
+  /*bottom: 25%;*/
+  right: 0;
+  width: 300px;
+  height: 35%;
+  background-color: #FFC6C6;
+  -webkit-animation: translate1 3000ms infinite;
+          animation: translate1 3000ms infinite;
+}
+
+.Footer-items {
+  width: 300px;
+  float: right;
+}
+
+.Footer-item {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.Footer-link {
+  /*position: relative;*/
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-animation: translate2 3000ms infinite;
+          animation: translate2 3000ms infinite;
+}
+
+.Footer-item:nth-child(2) .Footer-link {
+  -webkit-animation-delay: 60ms;
+          animation-delay: 60ms;
+}
+
+.Footer-item:nth-child(3) .Footer-link {
+  -webkit-animation-delay: 120ms;
+          animation-delay: 120ms;
+}
+
+.Footer-item:nth-child(4) .Footer-link {
+  -webkit-animation-delay: 180ms;
+          animation-delay: 180ms;
+}
+
+.Footer-item:nth-child(5) .Footer-link {
+  -webkit-animation-delay: 240ms;
+          animation-delay: 240ms;
+}
+
+.Footer-icon {
+  color: #070707;
+  /*position: absolute;*/
+  left: 50%;
+  /*top: 50%;*/
+  font-size: 1.6em;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+
+.fa-codepen, .fa-linkedin, .fa-envelope {
+  font-size: 1.4em;
+}
+
+.fa-linkedin {
+  font-size: 1.5em;
+}
+
+.fa-envelope {
+  font-size: 1.3em;
+}
+
+.Footer-link:hover {
+  /*.fa-twitter { 
+    color : #3498db;
+  }
+  .fa-google-plus { 
+    color : #E34429;
+  }
+  .fa-github { 
+    color : #9C7A5B;
+  }
+   .fa-linkedin { 
+    color : #34495e;
+  }
+   .fa-codepen { 
+    color : #161616;
+  }*/
+}
+.Footer-link:hover .Footer-icon {
+  /*top: 30%;*/
+}
+
+@-webkit-keyframes translate1 {
+  0% {
+    opacity: 0;
+    margin-right: -7%;
+  }
+  20% {
+    opacity: 1;
+    margin-right: 0;
+  }
+  65% {
+    opacity: 1;
+    margin-right: 0;
+  }
+  85% {
+    opacity: 0;
+    margin-right: 10%;
+  }
+  100% {
+    opacity: 0;
+    margin-right: 10%;
+  }
+}
+
+@keyframes translate1 {
+  0% {
+    opacity: 0;
+    margin-right: -7%;
+  }
+  20% {
+    opacity: 1;
+    margin-right: 0;
+  }
+  65% {
+    opacity: 1;
+    margin-right: 0;
+  }
+  85% {
+    opacity: 0;
+    margin-right: 10%;
+  }
+  100% {
+    opacity: 0;
+    margin-right: 10%;
+  }
+}
+@-webkit-keyframes translate2 {
+  2% {
+    opacity: 0;
+    margin-left: 175%;
+  }
+  21% {
+    opacity: 1;
+    margin-left: 0%;
+  }
+  64% {
+    opacity: 1;
+    margin-left: 0%;
+  }
+  80% {
+    opacity: 0;
+    margin-left: -250%;
+  }
+  100% {
+    opacity: 0;
+    margin-left: -250%;
+  }
+}
+@keyframes translate2 {
+  2% {
+    opacity: 0;
+    margin-left: 175%;
+  }
+  21% {
+    opacity: 1;
+    margin-left: 0%;
+  }
+  64% {
+    opacity: 1;
+    margin-left: 0%;
+  }
+  80% {
+    opacity: 0;
+    margin-left: -250%;
+  }
+  100% {
+    opacity: 0;
+    margin-left: -250%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
